@@ -18,6 +18,8 @@ namespace AspNetCore.SimpleApi.Extensions
                 {
                     dbContext.Todos.AddRange(
                         Enumerable.Range(0, 10).Select(i => new Todo { Name = $"Todo {i}", Description = $"Description {i}" }));
+
+                    dbContext.SaveChanges();
                 }
             }
 
