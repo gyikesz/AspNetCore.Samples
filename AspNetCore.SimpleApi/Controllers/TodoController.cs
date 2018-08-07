@@ -14,6 +14,7 @@ namespace AspNetCore.SimpleApi.Controllers
     {
         private readonly SimpleApiDbContext _context;
 
+        // TODO: create service layer and use that as a dependency.
         public TodoController(SimpleApiDbContext context)
         {
             _context = context;
