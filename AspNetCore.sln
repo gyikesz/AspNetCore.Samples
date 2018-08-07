@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FDF3829B-B44A-4D5E-8F3B-CE85815D5AF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.SimpleApi", "AspNetCore.SimpleApi\AspNetCore.SimpleApi.csproj", "{3BA54448-E4E9-4016-9796-953F104EF954}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.SimpleApi", "samples\AspNetCore.SimpleApi\AspNetCore.SimpleApi.csproj", "{3BA54448-E4E9-4016-9796-953F104EF954}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
