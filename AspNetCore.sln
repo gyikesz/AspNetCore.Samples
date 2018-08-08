@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FDF3829B-B44A-4D5E-8F3B-CE85815D5AF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.SimpleApi", "samples\AspNetCore.SimpleApi\AspNetCore.SimpleApi.csproj", "{3BA54448-E4E9-4016-9796-953F104EF954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.SimpleApi", "samples\AspNetCore.SimpleApi\AspNetCore.SimpleApi.csproj", "{3BA54448-E4E9-4016-9796-953F104EF954}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AF822DDA-CCDE-4CFF-B279-F1399366EE4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.SimpleApi.IntegartionTests", "tests\AspNetCore.SimpleApi.IntegartionTests\AspNetCore.SimpleApi.IntegartionTests.csproj", "{BC4477E1-ED23-447A-BCA0-A670AC818FC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{3BA54448-E4E9-4016-9796-953F104EF954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BA54448-E4E9-4016-9796-953F104EF954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BA54448-E4E9-4016-9796-953F104EF954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4477E1-ED23-447A-BCA0-A670AC818FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4477E1-ED23-447A-BCA0-A670AC818FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4477E1-ED23-447A-BCA0-A670AC818FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4477E1-ED23-447A-BCA0-A670AC818FC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3BA54448-E4E9-4016-9796-953F104EF954} = {FDF3829B-B44A-4D5E-8F3B-CE85815D5AF8}
+		{BC4477E1-ED23-447A-BCA0-A670AC818FC0} = {AF822DDA-CCDE-4CFF-B279-F1399366EE4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C15C505D-E68E-40D6-86B2-50C678E29178}

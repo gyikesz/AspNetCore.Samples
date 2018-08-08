@@ -53,7 +53,10 @@ namespace AspNetCore.SimpleApi
 
             app.UseMvc();
 
-            app.SeedDatabase();
+            if (env.IsDevelopment())
+            {
+                app.SeedDatabase();
+            }
         }
     }
 }
