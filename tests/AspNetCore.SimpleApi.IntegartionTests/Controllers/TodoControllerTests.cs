@@ -12,10 +12,9 @@ namespace AspNetCore.SimpleApi.IntegartionTests.Controllers
     public class TodoControllerTests : ContollerTestBase
     {
         public TodoControllerTests(SimpleApiFactory simpleApiFactory, ITestOutputHelper testOutputHelper)
-            : base(simpleApiFactory, testOutputHelper, "Todo", Versions.V1)
+            : base(simpleApiFactory, testOutputHelper, "Todo", Api.Versions.V1)
         {
         }
-
 
         [Fact]
         public async Task ShouldValidateOnPost()
@@ -26,7 +25,8 @@ namespace AspNetCore.SimpleApi.IntegartionTests.Controllers
                 Description = "",
             };
 
-            var response = await _httpClient.PostAsync("api/Todo", new ObjectContent<Todo>(todo, new JsonMediaTypeFormatter()));
+            var endPoint = BuildContollerEndPointUrl();
+            var response = await _httpClient.PostAsync(endPoint, new ObjectContent<Todo>(todo, new JsonMediaTypeFormatter()));
 
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }

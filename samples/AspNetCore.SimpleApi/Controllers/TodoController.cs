@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace AspNetCore.SimpleApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion(Api.Versions.V1)]
+    [Route(Api.Routes.VERSIONED_API_ROUTE)]
     public class TodoController : ControllerBase
     {
         private readonly SimpleApiDbContext _context;

@@ -18,15 +18,14 @@ namespace AspNetCore.SimpleApi.IntegartionTests.Controllers
             _apiVersion = apiVersion ?? throw new ArgumentNullException(nameof(apiVersion));
         }
 
-
-        protected virtual string BuildContollerEndPointUrl(string controllerAction)
+        protected virtual string BuildContollerEndPointUrl(string controllerAction = null)
         {
-            return $"api/{_contollerName}/{controllerAction}";
+            return $"api/v{_apiVersion}/{_contollerName}/{controllerAction ?? "" }";
         }
 
         protected virtual string BuildContollerEndPointUrl(string controller, string controllerAction)
         {
-            return $"api/{controller}/{controllerAction}";
+            return $"api/v{_apiVersion}/{controller}/{controllerAction}";
         }
     }
 }

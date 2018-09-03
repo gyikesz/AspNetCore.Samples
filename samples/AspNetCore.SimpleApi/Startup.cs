@@ -4,6 +4,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,6 +23,7 @@ namespace AspNetCore.SimpleApi
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddDocumentedMvcWithVersioning()
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddFluentValidation(validation =>
@@ -31,12 +33,10 @@ namespace AspNetCore.SimpleApi
                 });
 
             services.AddSqlServer(Configuration);
-
-            services.AddSwaggerApiDocs();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
@@ -49,7 +49,7 @@ namespace AspNetCore.SimpleApi
 
             app.UseHttpsRedirection();
 
-            app.UseSwaggerDocs();
+            app.UseSwaggerDocs(provider);
 
             app.UseMvc();
 

@@ -1,6 +1,7 @@
 ﻿using AspNetCore.SimpleApi.Infrastructure;
 using AspNetCore.SimpleApi.Model;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 
@@ -27,13 +28,18 @@ namespace AspNetCore.SimpleApi.Extensions
         }
 
 
-        public static IApplicationBuilder UseSwaggerDocs(this IApplicationBuilder app)
+        public static IApplicationBuilder UseSwaggerDocs(this IApplicationBuilder app, IApiVersionDescriptionProvider provider)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Simple API V1");
-            });
+            app.UseSwaggerUI(
+                options =>
+                {
+                    // build a swagger endpoint for each discovered API version
+                    foreach (var description in provider.ApiVersionDescriptions)
+                    {
+                        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+                    }
+                });
 
             return app;
         }
